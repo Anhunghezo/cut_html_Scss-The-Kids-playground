@@ -1,13 +1,19 @@
 $primary-color: #fdc982;
 $text-color: #1b2b5f;
+$text-gray: #c6cad7;
 
-@mixin flex($align: flex-start, $justify: flex-start, $swap: nowrap) {
+@mixin flex($align: flex-start, $justify: flex-start, $swap: nowrap, $dir:row) {
     display: flex;
     justify-content: $justify;
     align-items: $align;
     flex-wrap: $swap;
+    flex-direction: $dir;
 }
 
+@mixin size($width, $height: $width ) {
+    width: $width;
+    height: $height;
+}
 
 html {
     font-size: 62.5%; //1rem = 10px
@@ -24,6 +30,8 @@ body {
     font-family: 'Poppins', sans-serif;
     color: $text-color;
     line-height: 1.4;
+    font-weight: 400;
+    padding-bottom: 20rem;
 }
 
 a {
@@ -99,7 +107,7 @@ img {
 
 .banner {
     padding-top: 15rem;
-    border-bottom: 15rem;
+    padding-bottom: 15rem;
     max-width: 80rem;
     margin: 0 auto;
     text-align: center;
@@ -153,4 +161,70 @@ img {
         border-radius: 5rem;
     }
 
+}
+
+.category {
+    &__list {
+        @include flex(stretch, space-between , wrap )
+    }
+
+    &__item {
+        width: calc(25% - 22.5px);
+        padding: 2.5rem;
+        background-color: white;
+        border-radius: 20px;
+
+        // Way2: Fix 2 line title
+        // @include flex(stretch, flex-start, nowrap, column)
+
+        &:first-child {
+            box-shadow: 0 20px 35px -5px rgba(255, 151, 195, 0.25);
+        }
+
+        &:nth-child(2) {
+            box-shadow: 0 20px 35px -5px rgba(255, 112, 109, 0.25);
+        }
+
+        &:nth-last-child(2) {
+            box-shadow: 0 20px 35px -5px rgba(255, 152, 255, 0.25);
+        }
+
+        &:last-child {
+            box-shadow: 0 20px 35px -5px rgba(255, 200, 122, 0.25);
+        }
+    }
+
+    &__image {
+        border-radius:  inherit;
+        object-fit: cover;
+        margin-bottom: 4rem;
+        @include size(100%, 23rem);
+        height: 23rem;
+        width: 100%;
+    }
+
+    &__name,
+    &__details {
+        // Way1: Fix one line title 👇
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__name {
+        font-size: 2.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    &__details {
+        font-size: 1.4rem;
+        color: $text-gray;
+
+        // Way2: Fix 2 line title
+        // Push other to top, and go down
+        // margin-top: auto; 
+        i {
+            margin-left: 1.5rem;
+        }
+    }
 }
