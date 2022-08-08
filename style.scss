@@ -1,0 +1,97 @@
+$primary-color: #fdc982;
+$text-color: #1b2b5f;
+
+@mixin flex($align: flex-start, $justify: flex-start, $swap: nowrap) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $swap;
+}
+
+
+html {
+    font-size: 62.5%; //1rem = 10px
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: $text-color;
+}
+
+a {
+    text-decoration:  none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+// 1440px, 1170px
+
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.container {
+    margin: 0 auto;
+    min-width: 1210px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.header {
+    padding-top: 4rem;
+
+    &__inner {
+        @include flex(center, space-between)
+    }
+
+    &__menu {
+        &-list {
+            @include flex(center);
+        }
+
+        &-item {
+            margin-left: 5rem;
+
+            &:last-child {
+                margin-left: 7rem;
+            }
+        }
+
+        &-link {
+            font-size: 1.6rem;
+            color: $text-color;
+        }
+    }
+
+    &__login {
+        display: inline-block;
+        padding: 1.5rem 2.5rem;
+        border: 1px solid currentColor;
+        border-radius: 2.5rem;
+        transition: color .25s linear, border .25s linear;
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}
+
+
+.logo {
+    font-size: 2rem;
+    font-weight: 600;
+    color: $text-color;
+    &__text {
+        color: $primary-color;
+    }
+}
