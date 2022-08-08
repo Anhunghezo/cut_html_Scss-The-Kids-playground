@@ -12,6 +12,7 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   color: #1b2b5f;
+  line-height: 1.4;
 }
 
 a {
@@ -30,7 +31,7 @@ img {
 
 .container {
   margin: 0 auto;
-  min-width: 1210px;
+  max-width: 1210px;
   padding-left: 2rem;
   padding-right: 2rem;
 }
@@ -59,16 +60,16 @@ img {
 .header__menu-link {
   font-size: 1.6rem;
   color: #1b2b5f;
+  transition: color 0.25s linear, border 0.25s linear;
+}
+.header__menu-link:hover {
+  color: #fdc982;
 }
 .header__login {
   display: inline-block;
-  padding: 1.5rem 2.5rem;
+  padding: 1.5rem 3rem;
   border: 1px solid currentColor;
   border-radius: 2.5rem;
-  transition: color 0.25s linear, border 0.25s linear;
-}
-.header__login:hover {
-  color: #fdc982;
 }
 
 .logo {
@@ -78,6 +79,56 @@ img {
 }
 .logo__text {
   color: #fdc982;
+}
+
+.banner {
+  padding-top: 15rem;
+  border-bottom: 15rem;
+  max-width: 80rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.banner__heading {
+  font-weight: 600;
+  font-size: 6rem;
+  margin-bottom: 3rem;
+}
+.banner__desc {
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 4rem;
+}
+.banner__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+.banner__buttons .btn {
+  margin: 0 1rem;
+}
+
+.btn {
+  cursor: pointer;
+  outline: none;
+  font-size: 1.6rem;
+  text-align: center;
+  color: #1b2b5f;
+  padding: 1.5rem 3rem;
+  display: inline-block;
+  border: 0;
+  background-color: transparent;
+}
+.btn--border {
+  border: 1px solid currentColor;
+}
+.btn--primary {
+  background-color: #fdc982;
+}
+.btn--primary.has-shadow {
+  box-shadow: 0 10px 35px -5px #fdc982;
+}
+.btn--rounded {
+  border-radius: 5rem;
 }
 
 /*# sourceMappingURL=style.css.map */

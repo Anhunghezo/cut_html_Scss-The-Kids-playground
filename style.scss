@@ -23,6 +23,7 @@ html {
 body {
     font-family: 'Poppins', sans-serif;
     color: $text-color;
+    line-height: 1.4;
 }
 
 a {
@@ -43,7 +44,7 @@ img {
 
 .container {
     margin: 0 auto;
-    min-width: 1210px;
+    max-width: 1210px;
     padding-left: 2rem;
     padding-right: 2rem;
 }
@@ -71,18 +72,18 @@ img {
         &-link {
             font-size: 1.6rem;
             color: $text-color;
+            transition: color .25s linear, border .25s linear;
+            &:hover {
+                color: $primary-color;
+            }
         }
     }
 
     &__login {
         display: inline-block;
-        padding: 1.5rem 2.5rem;
+        padding: 1.5rem 3rem;
         border: 1px solid currentColor;
         border-radius: 2.5rem;
-        transition: color .25s linear, border .25s linear;
-        &:hover {
-            color: $primary-color;
-        }
     }
 }
 
@@ -94,4 +95,62 @@ img {
     &__text {
         color: $primary-color;
     }
+}
+
+.banner {
+    padding-top: 15rem;
+    border-bottom: 15rem;
+    max-width: 80rem;
+    margin: 0 auto;
+    text-align: center;
+
+    &__heading {
+        font-weight: 600;
+        font-size: 6rem;
+        margin-bottom: 3rem;
+    }
+
+    &__desc {
+        font-size: 1.8rem;
+        font-weight: 300;
+        margin-bottom: 4rem;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        .btn {
+            margin: 0 1rem;
+        }
+    }
+}
+
+
+.btn {
+    cursor: pointer;
+    outline: none;
+    font-size: 1.6rem;
+    text-align: center;
+    color: $text-color;
+    padding: 1.5rem 3rem;
+    display: inline-block;
+    border: 0;
+    background-color: transparent;
+
+    &--border {
+        border: 1px solid currentColor;
+    }
+
+    &--primary {
+        background-color: $primary-color;
+        &.has-shadow {
+            box-shadow: 0 10px 35px -5px $primary-color;
+        }
+    }
+
+    &--rounded {
+        border-radius: 5rem;
+    }
+
 }
