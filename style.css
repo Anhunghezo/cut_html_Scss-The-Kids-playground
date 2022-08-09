@@ -203,6 +203,11 @@ img {
 .feature__item:nth-child(even) .feature__info {
   padding-right: 10rem;
 }
+.feature__image > img {
+  width: 61rem;
+  height: 71.5rem;
+  border-radius: 7rem;
+}
 .feature__image, .feature__info {
   width: 50%;
 }
